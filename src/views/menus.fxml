@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+   <children>
+      <HBox prefWidth="200.0">
+         <children>
+            <MenuBar fx:id="mnbBar" prefHeight="27.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="mnNew" mnemonicParsing="false" text="New">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/newFile.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="mnOpen" mnemonicParsing="false" text="Open">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/open.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="mnPrint" mnemonicParsing="false" text="Print">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/print.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem fx:id="mnClose" mnemonicParsing="false" text="Close">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+                <Menu fx:id="mnEdit" mnemonicParsing="false" text="Edit">
+                  <items>
+                        <CheckMenuItem fx:id="chkCheck" mnemonicParsing="false" text="Check it" />
+                        <Menu fx:id="mnColor" mnemonicParsing="false" text="Color">
+                           <items>
+                              <RadioMenuItem fx:id="rbtRed" mnemonicParsing="false" text="Red">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="color" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem fx:id="rbtBlue" mnemonicParsing="false" text="Blue" toggleGroup="$color" />
+                              <RadioMenuItem fx:id="rbtGreen" mnemonicParsing="false" text="Green" toggleGroup="$color" />
+                           </items>
+                        </Menu>
+                    <MenuItem fx:id="mnDelete" mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu fx:id="mnHelp" mnemonicParsing="false" text="Help">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Software">
+                          <items>
+                            <MenuItem fx:id="mnUnix" mnemonicParsing="false" text="Unix" />
+                              <MenuItem fx:id="mnWindows" mnemonicParsing="false" text="Windows" />
+                              <MenuItem fx:id="mnMac" mnemonicParsing="false" text="Mac OS" />
+                          </items>
+                        </Menu>
+                    <MenuItem fx:id="mnAbout" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+      <VBox fx:id="vBoxMain" prefHeight="200.0" prefWidth="100.0" />
+   </children>
+</VBox>
